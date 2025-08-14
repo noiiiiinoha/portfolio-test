@@ -1,0 +1,397 @@
+/* 基本スタイル */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+h2{
+  text-align: center;
+  margin-top: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 10px;
+  list-style-type: none; 
+  padding-left: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.text-container{
+  width: 90%;
+  text-align: left;
+  margin: auto;
+
+  a {
+    display: block; /* <a> タグをブロック要素化 */
+    width: fit-content; /* ボタンの幅に合わせる */
+    margin: 0 auto; /* 左右の margin を auto にして中央寄せ */
+  }
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* フッターリンク */
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+footer nav li {
+  margin: 0 10px;
+}
+
+footer nav a {
+  color: #fff;
+}
+
+/* メディアクエリ（画面幅が768px以下の場合） */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  main {
+    padding: 10px;
+  }
+}
+
+/* メディアクエリ（画面幅が480px以下の場合） */
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+}
+
+/* グリッドレイアウトの例 */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* New Section Styles */
+.anchor-section {
+  background-color: #e9e9e9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.anchor-nav {
+  margin-bottom: 20px;
+}
+
+.anchor-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.anchor-nav li a {
+  background-color: #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: block;
+}
+
+.anchor-nav li a:hover {
+  background-color: #ccc;
+}
+
+.anchor-content {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.anchor-content-item {
+  flex: 1 1 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+}
+
+/* Media query for anchor section */
+@media (max-width: 600px) {
+  .anchor-content {
+    flex-direction: column;
+  }
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 11; /* Ensure the hamburger menu is above the hamburger-nav */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s; /* Add transition for smooth animation */
+}
+/* Styles for when the hamburger menu is active */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(135deg); 
+  background-color: #fff;/* Move down and rotate top bar */
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-135deg); 
+  background-color: #fff;/* Move up and rotate bottom bar */
+}
+
+.hamburger-nav {
+  display: none;
+  position: absolute;
+  top: 0px;/* headerの上に被せる */
+  right: 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.hamburger-nav ul {
+  flex-direction: column;
+}
+
+.hamburger-nav li {
+  margin: 10px 0;
+}
+
+.hamburger-nav a {
+  display: block;
+  padding: 10px;
+}
+
+
+/* メディアクエリ（画面幅が768px以下の場合） */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .hamburger-nav.active {
+    display: block;
+    background: black;
+    margin-bottom: 2rem;
+
+    ul{
+      padding: 0;
+
+      li{
+        list-style: none;
+        padding-left: 0;
+        
+        a{
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.2rem;
+        }
+      }
+      .check-list li::before{
+        content: "✔";
+        display: block;
+        margin-right: 8px;
+        color: green;;
+      }
+    }
+  }
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 300px;
+}
+
+.mySlides img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* メディアクエリ（画面幅が768px以下の場合） */
+@media (max-width: 768px) {
+  .mySlides {
+    display: none;
+    width: 100%;
+    height: 170px;
+  }
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators container */
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  color: #fff;
+}
+
+/* ... (Existing CSS code) ... */
+
+/* Contact Form Styles */
+.contact-form {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+.contact-form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #555;
+}

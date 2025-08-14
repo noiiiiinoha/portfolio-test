@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ確認</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>サイトタイトル</h1>
+    </header>
+    <main>
+        <section class="confirm-section">
+            <h2>お問い合わせ内容確認</h2>
+            <div class="confirm-content">
+                <p>以下の内容で送信します。よろしいですか？</p>
+                <div id="confirm-data">
+                    <!-- Form data will be displayed here -->
+                </div>
+                <!-- confirm.html から send.php へのデータ送信 -->
+                <!-- confirm.html -->
+                <form action="send.php" method="post" id="sendForm">
+                    <div id="confirm-data"></div>
+                    <input type="hidden" name="name" id="confirm-name">
+                    <input type="hidden" name="email" id="confirm-email">
+                    <input type="hidden" name="message" id="confirm-message">
+                    <button type="button" id="backButton">修正する</button>
+                    <button type="submit">送信する</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 サイト名</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/email.js"></script>
+</body>
+</html>
