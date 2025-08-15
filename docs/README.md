@@ -1,5 +1,5 @@
 サイトURL
-https://noiiii.github.io/cording/
+https://noiiiiinoha.github.io/portfolio-test/
 
 ーーーー
 ローカルホストでフォームを確認する場合
